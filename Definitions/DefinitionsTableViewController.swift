@@ -9,6 +9,8 @@
 import UIKit
 
 class DefinitionsTableViewController: UITableViewController {
+    
+    var states = ["Alabama", "Alaska", "Arizona", "Arkansas"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +18,15 @@ class DefinitionsTableViewController: UITableViewController {
     }
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRows = 25
-        return numberOfRows
+        //let numberOfRows = 25
+        //return numberOfRows
+            return states.count
     }
 
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = "This will be the row text"
+            cell.textLabel?.text = states[indexPath.row]
 
         return cell
     }
