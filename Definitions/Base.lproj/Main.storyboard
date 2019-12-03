@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fb-ye-PAa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d9b-04-UCB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Definitions Table View Controller-->
+        <!--50 United States-->
         <scene sceneID="hNu-M4-T2l">
             <objects>
                 <tableViewController id="1fb-ye-PAa" customClass="DefinitionsTableViewController" customModule="Definitions" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,10 +30,66 @@
                             <outlet property="delegate" destination="1fb-ye-PAa" id="YM7-nR-gDu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="50 United States" id="S1Y-BE-rcF">
+                        <barButtonItem key="backBarButtonItem" title="Back to States" id="dzF-n3-JOi"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Rci-IN-qRs" kind="show" identifier="goToStateFacts" id="Cw5-Lo-4b8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jk7-RD-Ibj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="603" y="120"/>
+            <point key="canvasLocation" x="1513.0434782608697" y="119.86607142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HKw-sD-Aaj">
+            <objects>
+                <viewController id="Rci-IN-qRs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W57-Cm-MVv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3Z-sz-hcs">
+                                <rect key="frame" x="25" y="113" width="364" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="InF-GT-0bH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Z3Z-sz-hcs" firstAttribute="leading" secondItem="XRC-3b-DKO" secondAttribute="leading" constant="25" id="LxC-gs-RtH"/>
+                            <constraint firstItem="Z3Z-sz-hcs" firstAttribute="top" secondItem="XRC-3b-DKO" secondAttribute="top" constant="25" id="P6E-k3-uXx"/>
+                            <constraint firstItem="XRC-3b-DKO" firstAttribute="trailing" secondItem="Z3Z-sz-hcs" secondAttribute="trailing" constant="25" id="owt-Yf-weh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XRC-3b-DKO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zHP-vu-Pr4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9G-yw-jck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2283" y="120"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gKa-lE-FLv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d9b-04-UCB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g2D-gR-Kyw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1fb-ye-PAa" kind="relationship" relationship="rootViewController" id="ugn-6m-aaI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L8Q-69-x2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602.89855072463774" y="119.86607142857142"/>
         </scene>
     </scenes>
 </document>
