@@ -32,7 +32,15 @@ class DefinitionsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToStateFacts", sender: nil)
+        
+        let selectedState = states[indexPath.row]
+        performSegue(withIdentifier: "goToStateFacts", sender: selectedState)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let stateVC = segue.destination as! FactsViewController
+        let selectedState = sender as! String
+        stateVC.state = selectedState
     }
 
   }
