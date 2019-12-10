@@ -10,15 +10,27 @@ import UIKit
 
 class DefinitionsTableViewController: UITableViewController {
     
-    var states = ["Alabama", "Alaska", "Arizona", "Arkansas"]
+    //var states = ["Alabama", "Alaska", "Arizona", "Arkansas"]
+    
+    var states: [State] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let alabama = State()
+        alabama.name = "Alabama"
+        alabama.facts = "some facts about Alabama"
+        states.append(alabama)
+        
+        let alaska = State()
+        alaska.name = "Alaska"
+        alaska.facts = "some facts about alaska"
+        states.append(alaska)
+        
     }
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let numberOfRows = 25
+        //let numberOfRows = 50
         //return numberOfRows
             return states.count
     }
@@ -26,7 +38,7 @@ class DefinitionsTableViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-            cell.textLabel?.text = states[indexPath.row]
+            cell.textLabel?.text = states[indexPath.row].name
 
         return cell
     }
@@ -38,9 +50,13 @@ class DefinitionsTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let stateVC = segue.destination as! FactsViewController
-        let selectedState = sender as! String
-        stateVC.state = selectedState
+        if let stateVC = segue.destination as? FactsViewController{
+            if let selectedState = sender as? State {
+                stateVC.state = selectedState
+            }
+
+        }
+        
     }
 
   }

@@ -11,16 +11,15 @@ import UIKit
 class FactsViewController: UIViewController {
 
     @IBOutlet weak var factsLabel: UILabel!
-    var state = "state here"
+    var state = State()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = state
+        title = state.name
         
-        if state == "Alabama" {
-            factsLabel.text = "Alabama is a state"
-        }
+        factsLabel.text = state.facts
+        
     }
         
 
