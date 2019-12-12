@@ -8,10 +8,14 @@
 
 import Foundation
 
-class State {
+class State {    
     var name = ""
     
     //struct for facts?
     var facts = "facts"
     
+    init(name: String, facts: String) {
+        self.name = name
+        self.facts = facts
+    }
 }

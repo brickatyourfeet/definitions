@@ -13,20 +13,27 @@ class DefinitionsTableViewController: UITableViewController {
     //var states = ["Alabama", "Alaska", "Arizona", "Arkansas"]
     
     var states: [State] = []
+    let stateNames = ["Alabama", "Arkansas"]
+    let factsArray = ["alabama factzz", "arkansas facts"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let alabama = State()
-        alabama.name = "Alabama"
-        alabama.facts = "some facts about Alabama"
-        states.append(alabama)
+//        let alabama = State()
+//        alabama.name = "Alabama"
+//        alabama.facts = "some facts about Alabama"
+//        states.append(alabama)
+//
+//        let alaska = State()
+//        alaska.name = "Alaska"
+//        alaska.facts = "some facts about alaska"
+//        states.append(alaska)
         
-        let alaska = State()
-        alaska.name = "Alaska"
-        alaska.facts = "some facts about alaska"
-        states.append(alaska)
         
+        for (index, state) in stateNames.enumerated() {
+            let thisState = State(name: state, facts: factsArray[index])
+            states.append(thisState)
+        }
     }
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,8 +45,11 @@ class DefinitionsTableViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-            cell.textLabel?.text = states[indexPath.row].name
-
+            cell.textLabel?.text = stateNames[indexPath.row]
+            //plug flags into an array
+            //use array[indexPath.row]
+            //cell.imageView
+            cell.imageView?.image = UIImage(named: "\(stateNames[indexPath.row]).png")
         return cell
     }
     

@@ -11,7 +11,11 @@ import UIKit
 class FactsViewController: UIViewController {
 
     @IBOutlet weak var factsLabel: UILabel!
-    var state = State()
+    //add nickname label, and populate with getStateInfo function
+    //refactor that function or grab more info with that function
+    //add labels for each scraped item
+    //labels for daybels
+    var state = State(name: "", facts: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
