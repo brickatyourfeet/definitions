@@ -1,4 +1,4 @@
-##Definitions
+## Definitions
 
 Template app made for a list of definitions for studying.
 
